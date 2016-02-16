@@ -18,7 +18,7 @@ public class RushHourApp
 	{
 		// TODO Auto-generated method stub
 		RushHourNewGame newGame = new RushHourNewGame(); // Create a new gameplay
-		PlayRushHour();
+		newGame.PlayRushHour();
 
 	}
 
