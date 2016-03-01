@@ -3,8 +3,8 @@
  */
 
 /**
- * @author Fluchai Victor
- * @co-author Mahe Florian
+ * @author Rivoire
+ * @author Mahe 
  */
 public class RushHour
 {

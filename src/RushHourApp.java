@@ -4,7 +4,7 @@
 
 /**
  * This is the application of the game Rush Hour.
- * @author Fluchaire
+ * @author Rivoire
  * @author Mahe
  */
 public class RushHourApp
@@ -16,10 +16,7 @@ public class RushHourApp
 	 */
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
-		RushHourNewGame newGame = new RushHourNewGame(); // Create a new gameplay
-		newGame.PlayRushHour();
-
+		new RushHourGame().play(); 			
 	}
 
 }
