@@ -4,7 +4,7 @@
 
 /**
  * This class represents a rush hour game
- * (url)
+ * (https://fr.wikipedia.org/wiki/Rush_hour_%28casse-t%C3%AAte%29)
  * @author Rivoire
  * @author Mahe
  *
@@ -24,7 +24,9 @@ public class RushHourGame
 	
 
 	/**
-	 * Plays the game (explain the game deroulement)
+	 * Plays the game the player have the red car, he must cross the board and escape the trafic jam.
+	 * He can move all the car and truck but they just can move in one axe.
+	 * The player have to win with the less travel to do the best score. 
 	 */
 	public void play()
 	{
