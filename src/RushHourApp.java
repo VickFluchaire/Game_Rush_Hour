@@ -3,7 +3,7 @@
  */
 
 /**
- * This is the application of the game Rush Hour.
+ * An application that launches a Rush Hour game.
  * @author Rivoire
  * @author Mahe
  */
@@ -11,8 +11,8 @@ public class RushHourApp
 {
 
 	/**
-	 * This following application allow to create and launch a new game.
-	 * @param args
+	 * Application's main
+	 * @param args command-line arguments (unused)
 	 */
 	public static void main(String[] args)
 	{

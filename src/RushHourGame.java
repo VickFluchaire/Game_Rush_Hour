@@ -1,9 +1,6 @@
-/**
- * 
- */
 
 /**
- * This class represents a rush hour game
+ * This class represent a rush hour game
  * (https://fr.wikipedia.org/wiki/Rush_hour_%28casse-t%C3%AAte%29)
  * @author Rivoire
  * @author Mahe
@@ -12,8 +9,7 @@
 public class RushHourGame
 {
 	/**
-	 * Creates a new Rush Hour Game, ready to be played.
-	 * The game have a game board, all the cars, and trucks are placed on the board.
+	 * Creates a new Rush Hour game, ready to be played (all the cars and trucks are placed on the board)
 	 */
 	public RushHourGame()
 	{
@@ -24,9 +20,14 @@ public class RushHourGame
 	
 
 	/**
-	 * Plays the game the player have the red car, he must cross the board and escape the trafic jam.
-	 * He can move all the car and truck but they just can move in one axe.
-	 * The player have to win with the less travel to do the best score. 
+	 * In each lap, the player can move just one vehicle on one axe. 
+	 * The game is end when the player car escape the traffic jam.
+	 * 
+	 * while(Game != Win)
+	 * {
+	 * 		Lap=Lap+1
+	 * 		Movement=Movement+1
+	 * }
 	 */
 	public void play()
 	{
