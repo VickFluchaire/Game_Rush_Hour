@@ -2,14 +2,15 @@
 /**
  * This class represent a rush hour game
  * (https://fr.wikipedia.org/wiki/Rush_hour_%28casse-t%C3%AAte%29)
- * @author Rivoire
- * @author Mahe
+ * @author Rivoire, Mahe
  *
  */
 public class RushHourGame
 {
+	// TODO detail comment (how cars and trucks are placed ?)
 	/**
-	 * Creates a new Rush Hour game, ready to be played (all the cars and trucks are placed on the board)
+	 * Creates a new Rush Hour game, ready to be played 
+	 * (all the cars and trucks are placed on the board)
 	 */
 	public RushHourGame()
 	{
@@ -19,9 +20,11 @@ public class RushHourGame
 	}
 	
 
+	// TODO detail "the player can move just one vehicle on one axe"
+	// what information the method need, and how it is used to update game
 	/**
-	 * In each lap, the player can move just one vehicle on one axe. 
-	 * The game is end when the player car escape the traffic jam.
+	 * In each turn, the player can move just one vehicle on one axe. 
+	 * The game ends when the player car escapes the traffic jam.
 	 * 
 	 * while(Game != Win)
 	 * {

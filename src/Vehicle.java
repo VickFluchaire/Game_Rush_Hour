@@ -1,8 +1,9 @@
+// TODO this class is not used elsewhere ... consider deleting it or using it
 
 /**
- * @author RIVOIRE Gaspard
- * @author MAHE Florian
- * This class represent a Vahicle, car or truck 
+ * This class represent a Vehicle, car or truck
+ * @author RIVOIRE Gaspard, MAHE Florian
+ *  
  */
 public class Vehicle
 {
@@ -11,6 +12,9 @@ public class Vehicle
 	 */
 	private int color;
 	
+	// TODO if not all cars have three positions, consider using inheritance
+	// to represents three-positions cars, or think about a different way
+	// to handle positions
 	/**
 	 *First position of vehicle  
 	 */

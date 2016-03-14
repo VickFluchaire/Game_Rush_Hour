@@ -1,15 +1,10 @@
-/**
- * 
- */
-
+// TODO update README.md (what/who)
 /**
  * An application that launches a Rush Hour game.
- * @author Rivoire
- * @author Mahe
+ * @author Rivoire, Mahe
  */
 public class RushHourApp
 {
-
 	/**
 	 * Application's main
 	 * @param args command-line arguments (unused)
