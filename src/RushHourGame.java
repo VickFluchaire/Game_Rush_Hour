@@ -7,29 +7,36 @@
  */
 public class RushHourGame
 {
-	// TODO detail comment (how cars and trucks are placed ?)
+	
+	private Board board;
+	// TODO (done) detail comment (how cars and trucks are placed ?)
 	/**
 	 * Creates a new Rush Hour game, ready to be played 
-	 * (all the cars and trucks are placed on the board)
+	 * (all the cars and trucks are placed on the board, to place vehicles we use a plan )
 	 */
 	public RushHourGame()
 	{
-		// this. = ;
-		// this. =  ;
-		// ...
+		this.board = new Board();
+	
 	}
 	
 
-	// TODO detail "the player can move just one vehicle on one axe"
+	// TODO (done) detail "the player can move just one vehicle on one axe" 
 	// what information the method need, and how it is used to update game
 	/**
-	 * In each turn, the player can move just one vehicle on one axe. 
+	 * In each turn, the player can move just one vehicle, a new  movement will add one turn to the score  
+	 * the vehicles can only move forward and backward, in all free cells. 
 	 * The game ends when the player car escapes the traffic jam.
 	 * 
 	 * while(Game != Win)
 	 * {
-	 * 		Lap=Lap+1
-	 * 		Movement=Movement+1
+	 *		ask to player a movement
+	 *		if(movement = ok)
+	 *		{
+	 * 			do movement
+	 * 			Lap=Lap+1
+	 * 		}
+	 * 		else{return message impossible}
 	 * }
 	 */
 	public void play()
