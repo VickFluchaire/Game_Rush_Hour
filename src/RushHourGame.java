@@ -8,7 +8,15 @@
 public class RushHourGame
 {
 	
+	/**
+	 * The board of the game
+	 */
 	private Board board;
+	
+	/**
+	 * Tab of all vehicle of a game
+	 */
+	private Vehicle[] vehicle;
 	// TODO (done) detail comment (how cars and trucks are placed ?)
 	/**
 	 * Creates a new Rush Hour game, ready to be played 
@@ -17,7 +25,7 @@ public class RushHourGame
 	public RushHourGame()
 	{
 		this.board = new Board();
-	
+		this.vehicle = new Vehicle(***,***); //need to understand how we can use the atribut "color"
 	}
 	
 

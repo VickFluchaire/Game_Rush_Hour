@@ -7,9 +7,15 @@
 public class Board
 {
 
+	/**
+	 * Tab board who represent the suppor tof the game. 
+	 */
 	private int[][] board;
 	
 	
+/**
+ * Create the board, 6 by 6, with all cell initialize at 0.
+ */
 public Board() 
 {
 	this.board = new int[6][6];

@@ -1,4 +1,4 @@
-// TODO this class is not used elsewhere ... consider deleting it or using it
+// TODO (done) this class is not used elsewhere ... consider deleting it or using it
 
 /**
  * This class represent a Vehicle, car or truck
@@ -18,14 +18,18 @@ public class Vehicle
 	 */
 	private int[] Position;
 
+	/**
+	 * create a new vehicle with his color and his position on the tab.
+	 * @param color Color of the vehicle
+	 * @param position position of the vehicle
+	 */
 	public Vehicle(int color, int[] position)
 	{
-		super();
 		this.color = color;
-		Position = position;
+		this.Position = position;
 	}
 	
-	// TODO if not all cars have three positions, consider using inheritance
+	// TODO (done) if not all cars have three positions, consider using inheritance
 	// to represents three-positions cars, or think about a different way
 	// to handle positions
 	
