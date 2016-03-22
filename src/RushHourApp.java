@@ -1,4 +1,3 @@
-// TODO (done) update README.md (what/who)
 /**
  * An application that launches a Rush Hour game.
  * @author Rivoire, Mahe

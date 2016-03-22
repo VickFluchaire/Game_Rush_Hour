@@ -7,17 +7,18 @@
  */
 public class RushHourGame
 {
-	
 	/**
-	 * The board of the game
+	 * The game board
 	 */
 	private Board board;
 	
+	// TODO rename field, update comment
 	/**
 	 * Tab of all vehicle of a game
 	 */
 	private Vehicle[] vehicle;
-	// TODO (done) detail comment (how cars and trucks are placed ?)
+	
+	// TODO detail comment (what is the plan?)
 	/**
 	 * Creates a new Rush Hour game, ready to be played 
 	 * (all the cars and trucks are placed on the board, to place vehicles we use a plan )
@@ -29,8 +30,7 @@ public class RushHourGame
 	}
 	
 
-	// TODO (done) detail "the player can move just one vehicle on one axe" 
-	// what information the method need, and how it is used to update game
+	// TODO  clarify algorithm (ask for advice) 
 	/**
 	 * In each turn, the player can move just one vehicle, a new  movement will add one turn to the score  
 	 * the vehicles can only move forward and backward, in all free cells. 
@@ -49,7 +49,7 @@ public class RushHourGame
 	 */
 	public void play()
 	{
-		
+		// TODO write code here according to algorithm described in method comment
 	}
 
 }

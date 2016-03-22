@@ -1,4 +1,3 @@
-// TODO (done) this class is not used elsewhere ... consider deleting it or using it
 
 /**
  * This class represent a Vehicle, car or truck
@@ -12,6 +11,8 @@ public class Vehicle
 	 */
 	private int color;
 	
+	// TODO rename field (not compliant with coding conventions)
+	// TODO consider gathering x/y in an object rather than in an array
 	/**
 	 * This tab store position of a vehicles, he have 2(for cars) or 3(for trucks) values.
 	 * They are a tab for each vehicles. 
@@ -28,13 +29,4 @@ public class Vehicle
 		this.color = color;
 		this.Position = position;
 	}
-	
-	// TODO (done) if not all cars have three positions, consider using inheritance
-	// to represents three-positions cars, or think about a different way
-	// to handle positions
-	
-	
-	
-	
-	
 }	
