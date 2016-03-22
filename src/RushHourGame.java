@@ -12,25 +12,30 @@ public class RushHourGame
 	 */
 	private Board board;
 	
-	// TODO rename field, update comment
+	// TODO (done) rename field, update comment
 	/**
 	 * Tab of all vehicle of a game
 	 */
-	private Vehicle[] vehicle;
+	private Vehicle[] vehicles;
 	
-	// TODO detail comment (what is the plan?)
+	// TODO (done)detail comment (what is the plan?)
 	/**
 	 * Creates a new Rush Hour game, ready to be played 
-	 * (all the cars and trucks are placed on the board, to place vehicles we use a plan )
-	 */
+	 * (all the cars and trucks are placed on the board, to place vehicles we use a plan)
+	 *http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg*/
 	public RushHourGame()
 	{
 		this.board = new Board();
-		this.vehicle = new Vehicle(***,***); //need to understand how we can use the atribut "color"
+		this.vehicles = new Vehicle(); //need to understand how we can use the atribut "color"
 	}
 	
 
-	// TODO  clarify algorithm (ask for advice) 
+	public boolean gameIsEnd()
+	{
+		if()
+		return
+	}
+	// TODO (done)  clarify algorithm (ask for advice) 
 	/**
 	 * In each turn, the player can move just one vehicle, a new  movement will add one turn to the score  
 	 * the vehicles can only move forward and backward, in all free cells. 
@@ -39,16 +44,20 @@ public class RushHourGame
 	 * while(Game != Win)
 	 * {
 	 *		ask to player a movement
-	 *		if(movement = ok)
+	 *		if(movement = true)
 	 *		{
-	 * 			do movement
-	 * 			Lap=Lap+1
+	 * 			do the movement
+	 * 			count the laps
 	 * 		}
-	 * 		else{return message impossible}
+	 * 		else{return chose an other movement}
 	 * }
 	 */
 	public void play()
 	{
+		while(!gameIsEnd() )
+		{
+			System.out.println("Chose a movement:");
+		}
 		// TODO write code here according to algorithm described in method comment
 	}
 

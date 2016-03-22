@@ -5,11 +5,24 @@
  */
 public class Board
 {
-
-	// TODO fix comment
-	// TODO explain what kind of value is stored in array cells
+	
 	/**
-	 * Tab board who represent the suppor tof the game.
+	 * Default values of the board
+	 */
+	private final static int DEFAULT_SIZE = 6;
+	/**
+	 * Default value of a empty case of the board, represent by a 0
+	 */
+	private final static int DEFAULT_CASE = 0;
+	/**
+	 * Default value of a vehicle on the board, represent by a 1
+	 */
+	private final static int DEFAULT_VEHICLES = 1;
+	// TODO (done) fix comment
+	// TODO (done) explain what kind of value is stored in array cells
+	/**
+	 * Tab board who represent the support of the game. Fill of 1 or 0.
+	 * 
 	 */
 	private int[][] board;
 
@@ -18,14 +31,14 @@ public class Board
 	 */
 	public Board()
 	{
-		// TODO use constants
-		this.board = new int[6][6];
+		// TODO (done) use constants
+		this.board = new int[DEFAULT_SIZE][DEFAULT_SIZE];
 
-		for (int indexX = 0; indexX < 6; indexX++)
+		for (int indexX = 0; indexX < DEFAULT_SIZE; indexX++)
 		{
-			for (int indexY = 0; indexY < 6; indexY++)
+			for (int indexY = 0; indexY < DEFAULT_SIZE; indexY++)
 			{
-				this.board[indexX][indexY] = 0;
+				this.board[indexX][indexY] = DEFAULT_CASE;
 			}
 		}
 	}
