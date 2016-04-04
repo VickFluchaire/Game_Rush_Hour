@@ -12,51 +12,68 @@ public class RushHourGame
 	 */
 	private Board board;
 	
-	// TODO (done) rename field, update comment
 	/**
-	 * Tab of all vehicle of a game
+	 * vehicles (including red one)
 	 */
 	private Vehicle[] vehicles;
 	
 	// TODO (done)detail comment (what is the plan?)
 	/**
-	 * Creates a new Rush Hour game, ready to be played 
-	 * (all the cars and trucks are placed on the board, to place vehicles we use a plan)
-	 *http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg*/
+	 * Creates a new Rush Hour game, ready to be played  
+	 * (all the cars and trucks are placed on the board and the player is ready. To place the vehicles we use a default plan)
+	 * http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg*/
 	public RushHourGame()
 	{
 		this.board = new Board();
-		this.vehicles = new Vehicle(); //need to understand how we can use the atribut "color"
+		this.vehicles = new Vehicle(1,0,0); 
 	}
 	
 
-	public boolean gameIsEnd()
+	public boolean gameIsOver()
 	{
-		if()
-		return
+		// TODO to be completed
+		return false;
 	}
-	// TODO (done)  clarify algorithm (ask for advice) 
+	
+	public boolean mouvementValide(int color, Position[] position)
+	{
+		while(color != Vehicles.Vehicle.color[int indice = 0])
+		{
+			indice++;
+		}
+		
+		
+		return true;
+	}
 	/**
 	 * In each turn, the player can move just one vehicle, a new  movement will add one turn to the score  
 	 * the vehicles can only move forward and backward, in all free cells. 
 	 * The game ends when the player car escapes the traffic jam.
 	 * 
-	 * while(Game != Win)
+	 * while(<Game != Win>)
 	 * {
-	 *		ask to player a movement
-	 *		if(movement = true)
-	 *		{
-	 * 			do the movement
-	 * 			count the laps
-	 * 		}
-	 * 		else{return chose an other movement}
+	 * 		do
+	 * 		{
+	 *			<ask to player a movement>
+	 *		} 
+	 *		while (<movement is not valid>)
+	 *		
+	 *		<do the movement>
+	 * 		<count the laps>
 	 * }
 	 */
 	public void play()
 	{
-		while(!gameIsEnd() )
+		while(!gameIsOver() )
 		{
-			System.out.println("Chose a movement:");
+			do 
+			{
+				System.out.println("Chose a movement:");
+				 
+				
+	
+			}
+			while(mouvementValide())
 		}
 		// TODO write code here according to algorithm described in method comment
 	}

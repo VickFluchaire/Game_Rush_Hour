@@ -1,7 +1,8 @@
 
 /**
- * @author RIVOIRE Gaspard
- * @author MAHE Florian This class represent the class of the board
+ * This class reresents the board
+ * // ...
+ * @author RIVOIRE Gaspard, MAHE Florian 
  */
 public class Board
 {
@@ -14,12 +15,8 @@ public class Board
 	 * Default value of a empty case of the board, represent by a 0
 	 */
 	private final static int DEFAULT_CASE = 0;
-	/**
-	 * Default value of a vehicle on the board, represent by a 1
-	 */
-	private final static int DEFAULT_VEHICLES = 1;
-	// TODO (done) fix comment
-	// TODO (done) explain what kind of value is stored in array cells
+		
+
 	/**
 	 * Tab board who represent the support of the game. Fill of 1 or 0.
 	 * 
@@ -31,7 +28,6 @@ public class Board
 	 */
 	public Board()
 	{
-		// TODO (done) use constants
 		this.board = new int[DEFAULT_SIZE][DEFAULT_SIZE];
 
 		for (int indexX = 0; indexX < DEFAULT_SIZE; indexX++)

@@ -6,27 +6,36 @@
  */
 public class Vehicle
 {
+	// TODO use an enumeration called Color
+	public final static int RED = 1;
+	public final static int BLUE = 2;
+	public final static int YELLOW = 3;
+	public final static int GREEN = 4;
+	public final static int ORANGE = 5;
+	public final static int BLACK = 6;
+	public final static int PURPLE = 7;
+	public final static int BROWN = 8;
+	
 	/**
-	 * Color of the vehicle
+	 * Color of the vehicle (value taken from constants above)
 	 */
 	private int color;
 	
-	// TODO (done) rename field (not compliant with coding conventions)
+	
 	// TODO (done) consider gathering x/y in an object rather than in an array
 	/**
-	 * This tab store position of a vehicles, he have 2(for cars) or 3(for trucks) values.
-	 * They are a tab for each vehicles. 
+	 * vehicle's positions (2 for cars, 3 for trucks).
 	 */
-	private Position[] positionVehicle;
+	private Position[] positions;
 
 	/**
-	 * create a new vehicle with his color and his position on the tab.
+	 * create a new vehicle with his color and his positions on the board
 	 * @param color Color of the vehicle
-	 * @param position position of the vehicle
+	 * @param positions positions of the vehicle
 	 */
-	public Vehicle(int color, Position[] position)
+	public Vehicle(int color, Position[] positions)
 	{
 		this.color = color;
-		this.positionVehicle = position;
+		this.positions = positions;
 	}
 }	
