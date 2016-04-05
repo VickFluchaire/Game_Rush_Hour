@@ -7,15 +7,26 @@
  */
 public class RushHourGame
 {
+	private static final int NUMBER_OF_VEHICLES = 8;
+
+	private static final int NUMBER_POSITION_CAR = 2;
+	
+	private static final int NUMBER_POSITION_TRUCK = 3;
+
 	/**
 	 * The game board
 	 */
 	private Board board;
 	
 	/**
-	 * vehicles (including red one)
+	 * Vehicles (including red one)
 	 */
 	private Vehicle[] vehicles;
+	
+	/**
+	 * Player of the game
+	 */
+	private Player player;
 	
 	// TODO (done)detail comment (what is the plan?)
 	/**
@@ -24,8 +35,16 @@ public class RushHourGame
 	 * http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg*/
 	public RushHourGame()
 	{
+		Position RedCarposition1 = new Position(0,0);
+		Position RedCarposition2 = new Position(0,2);
+		Position[] positionsRedCar;
+		//positionRedCar = new Position[NUMBER_POSITION_CAR];		
+		Position positionRedCar[] = {RedCarposition1,RedCarposition2};
+		
 		this.board = new Board();
-		this.vehicles = new Vehicle(1,0,0); 
+		this.vehicles = new Vehicle[NUMBER_OF_VEHICLES];
+		Vehicle redCar = new Vehicle(1,positionRedCar);
+		this.player = new Player();
 	}
 	
 
@@ -68,12 +87,15 @@ public class RushHourGame
 		{
 			do 
 			{
-				System.out.println("Chose a movement:");
-				 
+			
+			int color = player.playerColor();
+			int position = player.playerPosition();
+
 				
 	
 			}
 			while(mouvementValide())
+				
 		}
 		// TODO write code here according to algorithm described in method comment
 	}
