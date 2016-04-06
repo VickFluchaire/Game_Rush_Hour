@@ -10,7 +10,7 @@ public class Player
 	/**
 	 * Take the value of the vehicle's color choose by the player on keyboard
 	 * @return the color of the car choose by the player
-	 */
+	 */ 
 	public int playerColor()
 	{
 		Scanner sc = new Scanner(System.in);

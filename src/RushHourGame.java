@@ -48,13 +48,23 @@ public class RushHourGame
 	}
 	
 
+	/**
+	 * Test if the game is over
+	 * @return true if the game is over
+	 */
 	public boolean gameIsOver()
 	{
 		// TODO to be completed
 		return false;
 	}
 	
-	public boolean mouvementValide(int color, Position[] position)
+	/**
+	 * Test if the movement choose by the player  can be realize 
+	 * @param color of a vehicle
+	 * @param position of a vehicle
+	 * @return true if the movement is allow 
+	 */
+	public boolean mouvementTest(int color, Position[] position)
 	{
 		while(color != Vehicles.Vehicle.color[int indice = 0])
 		{
@@ -94,7 +104,7 @@ public class RushHourGame
 				
 	
 			}
-			while(mouvementValide())
+			while(mouvementTest())
 				
 		}
 		// TODO write code here according to algorithm described in method comment
