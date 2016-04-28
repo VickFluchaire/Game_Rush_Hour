@@ -7,22 +7,11 @@
  */
 public class RushHourGame
 {
-	private static final int NUMBER_OF_VEHICLES = 8;
-
-	private static final int NUMBER_POSITION_CAR = 2;
-	
-	private static final int NUMBER_POSITION_TRUCK = 3;
-
 	/**
 	 * The game board
 	 */
 	private Board board;
-	
-	/**
-	 * Vehicles (including red one)
-	 */
-	private Vehicle[] vehicles;
-	
+		
 	/**
 	 * Player of the game
 	 */
@@ -34,16 +23,8 @@ public class RushHourGame
 	 * (all the cars and trucks are placed on the board and the player is ready. To place the vehicles we use a default plan)
 	 * http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg*/
 	public RushHourGame()
-	{
-		Position RedCarposition1 = new Position(0,0);
-		Position RedCarposition2 = new Position(0,2);
-		Position[] positionsRedCar;
-		//positionRedCar = new Position[NUMBER_POSITION_CAR];		
-		Position positionRedCar[] = {RedCarposition1,RedCarposition2};
-		
+	{		
 		this.board = new Board();
-		this.vehicles = new Vehicle[NUMBER_OF_VEHICLES];
-		Vehicle redCar = new Vehicle(1,positionRedCar);
 		this.player = new Player();
 	}
 	

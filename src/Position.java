@@ -25,6 +25,17 @@ public class Position
 		this.x = x0;
 		this.y = y0;
 	}
+
+	public int getX()
+	{
+		return this.x;
+	}
+
+	public int getY()
+	{
+		return this.y;
+	}
+	
 	
 	
 }
