@@ -47,7 +47,8 @@ public class RushHourGame
 	 */
 	public boolean mouvementTest(int color, Position[] position)
 	{
-		while(color != Vehicles.Vehicle.color[int indice = 0])
+		int indice = 0;
+		while(color != Vehicles.Vehicle.color[indice])
 		{
 			indice++;
 		}
@@ -79,8 +80,6 @@ public class RushHourGame
 			do 
 			{
 			
-			int color = player.playerColor();
-			int position = player.playerPosition();
 
 				
 	
