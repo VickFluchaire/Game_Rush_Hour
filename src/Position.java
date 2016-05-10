@@ -36,6 +36,13 @@ public class Position
 		return this.y;
 	}
 	
-	
+	public boolean equals(Position posi)
+	{
+		if(posi.getX() == this.x && posi.getY() == this.y)
+		{
+			return true;
+		}
+		else {return false;}
+	}
 	
 }

@@ -12,12 +12,7 @@ public class Player
 	 * @return the color and the positions of the car choose by the player
 	 */ 
 	public Vehicle movement()
-	{
-		int position = 
-		Position position = new position()
-		int movement =
-		Movement(position,)
-		
+	{		
 		
 		
 		

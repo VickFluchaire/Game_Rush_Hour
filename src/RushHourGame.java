@@ -17,7 +17,6 @@ public class RushHourGame
 	 */
 	private Player player;
 	
-	// TODO (done)detail comment (what is the plan?)
 	/**
 	 * Creates a new Rush Hour game, ready to be played  
 	 * (all the cars and trucks are placed on the board and the player is ready. To place the vehicles we use a default plan)
@@ -28,31 +27,10 @@ public class RushHourGame
 		this.player = new Player();
 	}
 	
-
-	/**
-	 * Test if the game is over
-	 * @return true if the game is over
-	 */
-	public boolean gameIsOver()
+	public boolean mouvementTest(Movement movement)
 	{
-		// TODO to be completed
-		return false;
-	}
-	
-	/**
-	 * Test if the movement choose by the player  can be realize 
-	 * @param color of a vehicle
-	 * @param position of a vehicle
-	 * @return true if the movement is allow 
-	 */
-	public boolean mouvementTest(int color, Position[] position)
-	{
-		int indice = 0;
-		while(color != Vehicles.Vehicle.color[indice])
-		{
-			indice++;
-		}
 		
+	
 		
 		return true;
 	}
@@ -75,7 +53,7 @@ public class RushHourGame
 	 */
 	public void play()
 	{
-		while(!gameIsOver() )
+		while(this.board.redCarOnExit() != true )
 		{
 			do 
 			{

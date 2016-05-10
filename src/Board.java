@@ -42,6 +42,31 @@ public class Board
 	private Vehicle[] vehicles;
 	
 	/**
+	 * Test if the game is over
+	 * @return true if the game is over
+	 */
+	public boolean redCarOnExit()
+	{
+		int i=0;
+		while(this.vehicles[i].getColor() != Color.RED)
+		{
+			i++;
+		}
+		Position positionCurr[] = this.vehicles[i].getPositions();
+		int j = 0;
+		while(j<3)
+		{
+			if(positionCurr[j].equals(POSITION_EXIT)==true)
+			{
+				return true;
+			}
+			j++;
+		}
+		return false;
+	}
+	
+	
+	/**
 	 * Create a tab with who contain with all vehicle with their positions. 
 	 */
 	public Board()
@@ -51,7 +76,7 @@ public class Board
 		Position[] positionsV1 = new Position[SIZE_CAR];
 		positionsV1[0] = new Position(2,1);
 		positionsV1[1] = new Position(2,2);
-		this.vehicles[0] = new Vehicle(1,positionsV1);
+		this.vehicles[0] = new Vehicle(Color.RED,positionsV1);
 		
 		Position[] positionsV2 = new Position[SIZE_CAR];
 		positionsV2[0] = new Position(1,4);
