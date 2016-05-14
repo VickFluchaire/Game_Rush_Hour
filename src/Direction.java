@@ -3,10 +3,8 @@ import java.util.Random;
 
 public enum Direction
 {
-	HAUT,
-	BAS,
-	DROITE,
-	GAUCHE;
+	VERTICAL,
+	HORIZONTAL;
 	
 	public Direction aleaDirection()
 	{

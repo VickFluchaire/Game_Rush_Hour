@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  * @author RIVOIRE Gaspard, MAHE Florian
@@ -6,6 +7,11 @@
 public class Position
 {
 
+	/**
+	 * Max values of the board
+	 */
+	private static final int MAX_SIZE = 6;
+	
 	/**
 	 * the position x of the vehicle
 	 */
@@ -24,6 +30,25 @@ public class Position
 	{
 		this.x = x0;
 		this.y = y0;
+	}
+
+	public Position aleaPosition()
+	{
+		int x = new Random().nextInt(MAX_SIZE);
+		int y = new Random().nextInt(MAX_SIZE);
+		
+		Position position = new Position(x,y);
+		return position;
+	}
+	
+	
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	public int getX()

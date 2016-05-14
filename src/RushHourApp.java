@@ -10,7 +10,7 @@ public class RushHourApp
 	 */
 	public static void main(String[] args)
 	{
-		new RushHourGame().play(); 			
+		new RushHourGame().play();
 	}
 
 }

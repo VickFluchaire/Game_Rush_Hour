@@ -23,6 +23,13 @@ public class Vehicle
 	 */
 	private Position[] positions;
 	
+	private Direction direction;
+	
+
+	public Direction getDirection() {
+		return direction;
+	}
+
 
 	public Position[] getPositions()
 	{
@@ -35,9 +42,10 @@ public class Vehicle
 	 * @param color Color of the vehicle
 	 * @param positions positions of the vehicle
 	 */
-	public Vehicle(Color color, Position[] positions)
+	public Vehicle(Color color, Position[] positions, Direction direction)
 	{
 		this.color = color;
 		this.positions = positions;
+		this.direction = direction;
 	}
 }	

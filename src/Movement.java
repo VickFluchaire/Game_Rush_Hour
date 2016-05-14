@@ -2,14 +2,30 @@
 public class Movement
 {
 	
-	private int direction;
+	private Direction direction;
 	private Position position;
-	private Movement movement;
+	private int deplacement;
 	
-	public Movement(Position position, int direction, Movement movement)
+	
+	public Direction getDirection() {
+		return direction;
+	}
+
+
+	public Position getPosition() {
+		return position;
+	}
+
+
+	public int getDeplacement() {
+		return deplacement;
+	}
+
+
+	public Movement(Position position, Direction direction, int deplacement)
 	{
 		this.direction = direction;
 		this.position = position;
-		this.movement = movement;
+		this.deplacement = deplacement;
 	}	
 }

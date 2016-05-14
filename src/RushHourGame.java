@@ -29,13 +29,88 @@ public class RushHourGame
 	
 	public boolean mouvementTest(Movement movement)
 	{
+		Vehicle[] vehicles = new Vehicle[8];
+		vehicles = this.board.getVehicles();
+		Position position = movement.getPosition();
 		
-	
-		
-		return true;
+		for(int i=0; i<vehicles.length; i++)
+		{
+			Position positionCurrs[] = vehicles[i].getPositions();
+			for(int j = 0; j<positionCurrs.length; j++)
+			{
+				if(positionCurrs[i] == position)
+				{
+					if(movement.getDirection() == vehicles[i].getDirection())
+					{
+						if(movement.getDeplacement() > 0)
+						{
+							Position posimax = player.posiMax(positionCurrs); 
+													
+								if(movement.getDirection() == Direction.VERTICAL)
+								{
+									return player.testmvtver(posimax, movement.getDeplacement(), vehicles);
+								}
+								else
+								{
+									return player.testmvthor(posimax, movement.getDeplacement(), vehicles);
+								}
+						}
+						else 
+						{
+							Position posimin = player.posiMin(positionCurrs);
+							if(movement.getDirection() == Direction.VERTICAL)
+							{
+								return player.testmvtver(posimin, movement.getDeplacement(), vehicles);
+							}
+							else
+							{
+								return player.testmvthor(posimin, movement.getDeplacement(), vehicles);
+							}															
+						}
+					}
+				}
+			}
+		}
+		return false;
 	}
+	
+	
+	public void updateMovement(Movement movement)
+	{
+		Vehicle[] vehicles = new Vehicle[8];
+		vehicles = this.board.getVehicles();
+		Position positionCurr = movement.getPosition();
+		
+		for(int i=0; i<vehicles.length; i++)
+		{
+			Position tabPositions[] = vehicles[i].getPositions();
+			for(int j = 0; j<tabPositions.length; j++)
+			{
+				if(tabPositions[j] == positionCurr)
+				{
+					if(movement.getDirection() == Direction.HORIZONTAL)
+					{
+						for(int k = 0; k<tabPositions.length; k++)
+						{
+							tabPositions[k].setX(tabPositions[k].getX() + movement.getDeplacement());
+						}
+					}
+					
+					if(movement.getDirection() == Direction.VERTICAL)
+					{
+						for(int k = 0; k<tabPositions.length; k++)
+						{
+							tabPositions[k].setY(tabPositions[k].getY() + movement.getDeplacement());
+						}
+					}
+				}
+			}
+		}
+		
+	}
+
 	/**
-	 * In each turn, the player can move just one vehicle, a new  movement will add one turn to the score  
+	 * In each turn, the player can move just one vehicle, a new movement will add one turn to the score  
 	 * the vehicles can only move forward and backward, in all free cells. 
 	 * The game ends when the player car escapes the traffic jam.
 	 * 
@@ -53,19 +128,18 @@ public class RushHourGame
 	 */
 	public void play()
 	{
+		int laps = 0;
 		while(this.board.redCarOnExit() != true )
 		{
-			do 
+			Movement movementPlayer = player.aleaMovement();
+			while(mouvementTest(movementPlayer) == false)
 			{
-			
-
-				
-	
+				movementPlayer = player.aleaMovement();
 			}
-			while(mouvementTest())
-				
+			updateMovement(movementPlayer);
+			laps ++;
 		}
-		// TODO write code here according to algorithm described in method comment
+		System.out.println(laps);
 	}
 
 }
