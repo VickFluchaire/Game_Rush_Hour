@@ -6,7 +6,7 @@ public enum Direction
 	VERTICAL,
 	HORIZONTAL;
 	
-	public Direction aleaDirection()
+	public static Direction aleaDirection()
 	{
 		return Direction.values()[new Random().nextInt(Direction.values().length)];
 	}		

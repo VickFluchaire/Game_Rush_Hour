@@ -14,7 +14,7 @@ public class Vehicle
 	
 	public Color getColor()
 	{
-		return color;
+		return this.color;
 	}
 
 
@@ -27,13 +27,13 @@ public class Vehicle
 	
 
 	public Direction getDirection() {
-		return direction;
+		return this.direction;
 	}
 
 
 	public Position[] getPositions()
 	{
-		return positions;
+		return this.positions;
 	}
 
 

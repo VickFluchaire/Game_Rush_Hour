@@ -19,14 +19,13 @@ public class Player
 	public Movement aleaMovement()
 	{		
 		 
-		this.direction = direction.aleaDirection();
-		this.position = position.aleaPosition();
-	
+		this.direction = Direction.aleaDirection();
+		this.position = Position.aleaPosition();
 		Random deplacement = new Random();
-		this.deplacement = -6 + deplacement.nextInt(12);
-	
+		this.deplacement = -4 + deplacement.nextInt(8);
 		Movement mvt = new Movement(this.position, this.direction, this.deplacement);
 		return mvt;
+		
 	}
 	
 		
@@ -86,7 +85,7 @@ public class Player
 			for(int i = 1; i <= deplacement; i++)
 			{
 				Position posicurr = new Position(position.getX(), position.getY()+i);
-				if(posicurr.getY()>6)
+				if(posicurr.getY()>=6)
 				{
 					return false;
 				}
@@ -94,10 +93,10 @@ public class Player
 				{
 					for(int j=0; j<vehicles.length; j++)
 					{
-						Position positionsCurr[] = vehicles[i].getPositions();
+						Position positionsCurr[] = vehicles[j].getPositions();
 						for(int k=0; k<positionsCurr.length;k++)
 						{
-							if(posicurr == positionsCurr[k])
+							if(posicurr.getX() == positionsCurr[k].getX() && posicurr.getY() == positionsCurr[k].getY())
 							{
 								return false;
 							}
@@ -112,7 +111,7 @@ public class Player
 			for(int i = -1; i >= deplacement; i--)
 			{
 				Position posicurr = new Position(position.getX(), position.getY()+i);
-				if(posicurr.getY()<-6)
+				if(posicurr.getY()<0)
 				{
 					return false;
 				}
@@ -120,10 +119,10 @@ public class Player
 				{
 					for(int j=0; j<vehicles.length; j++)
 					{
-						Position positionsCurr[] = vehicles[i].getPositions();
+						Position positionsCurr[] = vehicles[j].getPositions();
 						for(int k=0; k<positionsCurr.length;k++)
 						{
-							if(posicurr == positionsCurr[k])
+							if(posicurr.getX() == positionsCurr[k].getX() && posicurr.getY() == positionsCurr[k].getY())
 							{
 								return false;
 							}
@@ -143,7 +142,7 @@ public class Player
 			for(int i = 1; i <= deplacement; i++)
 			{
 				Position posicurr = new Position(position.getX()+i, position.getY());
-				if(posicurr.getX()>6)
+				if(posicurr.getX()>=6)
 				{
 					return false;
 				}
@@ -151,10 +150,10 @@ public class Player
 				{
 					for(int j=0; j<vehicles.length; j++)
 					{
-						Position positionsCurr[] = vehicles[i].getPositions();
+						Position positionsCurr[] = vehicles[j].getPositions();
 						for(int k=0; k<positionsCurr.length;k++)
 						{
-							if(posicurr == positionsCurr[k])
+							if(posicurr.getX() == positionsCurr[k].getX() && posicurr.getY() == positionsCurr[k].getY())
 							{
 								return false;
 							}
@@ -169,7 +168,7 @@ public class Player
 			for(int i = -1; i >= deplacement; i--)
 			{
 				Position posicurr = new Position(position.getX()+i, position.getY());
-				if(posicurr.getX()<-6)
+				if(posicurr.getX()<0)
 				{
 					return false;
 				}
@@ -177,10 +176,10 @@ public class Player
 				{
 					for(int j=0; j<vehicles.length; j++)
 					{
-						Position positionsCurr[] = vehicles[i].getPositions();
+						Position positionsCurr[] = vehicles[j].getPositions();
 						for(int k=0; k<positionsCurr.length;k++)
 						{
-							if(posicurr == positionsCurr[k])
+							if(posicurr.getX() == positionsCurr[k].getX() && posicurr.getY() == positionsCurr[k].getY())
 							{
 								return false;
 							}

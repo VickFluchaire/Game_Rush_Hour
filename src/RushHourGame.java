@@ -27,44 +27,47 @@ public class RushHourGame
 		this.player = new Player();
 	}
 	
-	public boolean mouvementTest(Movement movement)
+	/**
+	 * @param movement
+	 * @return 
+	 */
+	public boolean movementTest(Movement movement)
 	{
-		Vehicle[] vehicles = new Vehicle[8];
-		vehicles = this.board.getVehicles();
-		Position position = movement.getPosition();
-		
+		Vehicle[] vehicles = this.board.getVehicles();
+		Position position = movement.getPosition();		
 		for(int i=0; i<vehicles.length; i++)
 		{
 			Position positionCurrs[] = vehicles[i].getPositions();
+			
 			for(int j = 0; j<positionCurrs.length; j++)
 			{
-				if(positionCurrs[i] == position)
-				{
+				if(positionCurrs[j].getX() == position.getX() && positionCurrs[j].getY() == position.getY())
+				{ 
 					if(movement.getDirection() == vehicles[i].getDirection())
 					{
 						if(movement.getDeplacement() > 0)
 						{
-							Position posimax = player.posiMax(positionCurrs); 
+							Position posimax = this.player.posiMax(positionCurrs); 
 													
-								if(movement.getDirection() == Direction.VERTICAL)
-								{
-									return player.testmvtver(posimax, movement.getDeplacement(), vehicles);
-								}
-								else
-								{
-									return player.testmvthor(posimax, movement.getDeplacement(), vehicles);
-								}
-						}
-						else 
-						{
-							Position posimin = player.posiMin(positionCurrs);
 							if(movement.getDirection() == Direction.VERTICAL)
 							{
-								return player.testmvtver(posimin, movement.getDeplacement(), vehicles);
+								return this.player.testmvtver(posimax, movement.getDeplacement(), vehicles);
 							}
 							else
 							{
-								return player.testmvthor(posimin, movement.getDeplacement(), vehicles);
+								return this.player.testmvthor(posimax, movement.getDeplacement(), vehicles);
+							}
+						}
+						if(movement.getDeplacement() < 0)
+						{
+							Position posimin = this.player.posiMin(positionCurrs);
+							if(movement.getDirection() == Direction.VERTICAL)
+							{
+								return this.player.testmvtver(posimin, movement.getDeplacement(), vehicles);
+							}
+							else
+							{
+								return this.player.testmvthor(posimin, movement.getDeplacement(), vehicles);
 							}															
 						}
 					}
@@ -75,10 +78,9 @@ public class RushHourGame
 	}
 	
 	
-	public void updateMovement(Movement movement)
+	public boolean updateMovement(Movement movement)
 	{
-		Vehicle[] vehicles = new Vehicle[8];
-		vehicles = this.board.getVehicles();
+		Vehicle[] vehicles = this.board.getVehicles();
 		Position positionCurr = movement.getPosition();
 		
 		for(int i=0; i<vehicles.length; i++)
@@ -86,7 +88,7 @@ public class RushHourGame
 			Position tabPositions[] = vehicles[i].getPositions();
 			for(int j = 0; j<tabPositions.length; j++)
 			{
-				if(tabPositions[j] == positionCurr)
+				if(tabPositions[j].getX() == positionCurr.getX() && tabPositions[j].getY() == positionCurr.getY())
 				{
 					if(movement.getDirection() == Direction.HORIZONTAL)
 					{
@@ -94,6 +96,7 @@ public class RushHourGame
 						{
 							tabPositions[k].setX(tabPositions[k].getX() + movement.getDeplacement());
 						}
+					return true;
 					}
 					
 					if(movement.getDirection() == Direction.VERTICAL)
@@ -102,11 +105,12 @@ public class RushHourGame
 						{
 							tabPositions[k].setY(tabPositions[k].getY() + movement.getDeplacement());
 						}
+					 return true;
 					}
 				}
 			}
 		}
-		
+		return false;
 	}
 
 	/**
@@ -129,17 +133,22 @@ public class RushHourGame
 	public void play()
 	{
 		int laps = 0;
+		this.board.toString();	
+		//Position posi =  new Position(5,4);
+		//Movement test = new Movement(posi, Direction.VERTICAL,1);
 		while(this.board.redCarOnExit() != true )
 		{
-			Movement movementPlayer = player.aleaMovement();
-			while(mouvementTest(movementPlayer) == false)
+			
+			Movement movementPlayer = this.player.aleaMovement();
+			while(movementTest(movementPlayer) == false)
 			{
-				movementPlayer = player.aleaMovement();
+				movementPlayer = this.player.aleaMovement();
 			}
 			updateMovement(movementPlayer);
+			this.board.toString();
 			laps ++;
 		}
-		System.out.println(laps);
+		System.out.println("Vous avez gagné en "+laps+"coups");
 	}
 
 	

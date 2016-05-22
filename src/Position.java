@@ -32,7 +32,7 @@ public class Position
 		this.y = y0;
 	}
 
-	public Position aleaPosition()
+	public static Position aleaPosition()
 	{
 		int x = new Random().nextInt(MAX_SIZE);
 		int y = new Random().nextInt(MAX_SIZE);
