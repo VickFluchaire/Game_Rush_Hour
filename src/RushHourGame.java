@@ -20,7 +20,7 @@ public class RushHourGame
 	 * Creates a new Rush Hour game, ready to be played  
 	 * (all the cars and trucks are placed on the board and the player is ready. To place the vehicles we use a default plan)
 	 * http://www.thinkfun.com/wp-content/uploads/1996/09/rush-hour-howtoplay.jpg
-	 * @throws positionOutOfBoardExeption */
+	 * @throws positionOutOfBoardExeption  */
 	public RushHourGame() throws positionOutOfBoardExeption
 	{		
 		this.board = new Board();
