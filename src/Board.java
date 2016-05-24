@@ -121,6 +121,7 @@ public class Board
 	}
 
 
+
 	/**
 	 * Redefine the methode toString for print the gampe on the console : 
 	 * '*' = a empty cell
@@ -138,6 +139,7 @@ public class Board
 				
 				boolean etat =  false;
 				Position pos = new Position(x,y);
+
 			/*	try
 				{
 					pos = new Position(x,y);
@@ -155,6 +157,7 @@ public class Board
 					pos.setY(y);
 				}				
 				}*/
+				
 				for(int i=0; i<this.vehicles.length; i++)
 				{
 					Position positionCurrs[] = this.vehicles[i].getPositions();

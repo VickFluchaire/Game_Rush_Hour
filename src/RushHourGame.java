@@ -28,6 +28,7 @@ public class RushHourGame
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * @param movement : a movement
 	 * @return true if the movement available
 	 * @throws positionOutOfBoardExeption 
@@ -79,6 +80,7 @@ public class RushHourGame
 	}
 	
 	
+
 	/**
 	 * Methode for update the position of a vehicle on the board 
 	 * @param movement : a movement
@@ -154,6 +156,7 @@ public class RushHourGame
 				movementPlayer = this.player.aleaMovement();
 			}
 			updateMovement(movementPlayer);
+			this.board.toString();
 			laps ++;
 		}
 		System.out.println("Vous avez gagné en "+laps+"coups");
