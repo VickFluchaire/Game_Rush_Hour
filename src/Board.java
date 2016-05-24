@@ -1,4 +1,3 @@
-
 /**
  * This class reresents the board
  * // ...
@@ -6,6 +5,11 @@
  */
 public class Board
 {
+	/**
+	 * size of the board
+	 */
+	private static final int BOARD_SIZE = 6;
+	
 	/**
 	 * Number of vehicles of the game
 	 */
@@ -31,8 +35,12 @@ public class Board
 	 */
 	private Vehicle[] vehicles;
 	
+	/**
+	 * getter on Vehicle[]
+	 * @return tab of vehicles
+	 */
 	public Vehicle[] getVehicles() {
-		return vehicles;
+		return this.vehicles;
 	}
 
 
@@ -61,13 +69,14 @@ public class Board
 	
 	/**
 	 * Create a tab with who contain with all vehicle with their positions. 
+	 * @throws positionOutOfBoardExeption 
 	 */
-	public Board()
+	public Board() throws positionOutOfBoardExeption
 	{		
 		this.vehicles = new Vehicle[NUMBER_OF_VEHICLES];
 		
 		Position[] positionsV1 = new Position[SIZE_CAR];
-		positionsV1[0] = new Position(2,1);
+		positionsV1[0] = new Position(1,2);
 		positionsV1[1] = new Position(2,2);
 		this.vehicles[0] = new Vehicle(Color.RED,positionsV1,Direction.HORIZONTAL);
 		
@@ -99,16 +108,78 @@ public class Board
 		this.vehicles[5] = new Vehicle(Color.BLACK,positionsV6, Direction.VERTICAL);
 		
 		Position[] positionsV7 = new Position[SIZE_TRUCK];
-		positionsV7[0] = new Position(0,1);
-		positionsV7[1] = new Position(0,2);
-		positionsV7[1] = new Position(0,3);
+		positionsV7[0] = new Position(0,0);
+		positionsV7[1] = new Position(0,1);
+		positionsV7[2] = new Position(0,2);
 		this.vehicles[6] = new Vehicle(Color.PURPLE,positionsV7, Direction.VERTICAL);
 		
 		Position[] positionsV8 = new Position[SIZE_TRUCK];
-		positionsV8[0] = new Position(2,0);
-		positionsV8[1] = new Position(3,0);
-		positionsV8[1] = new Position(4,0);
+		positionsV8[0] = new Position(2,5);
+		positionsV8[1] = new Position(3,5);
+		positionsV8[2] = new Position(4,5);
 		this.vehicles[7] = new Vehicle(Color.BROWN,positionsV8, Direction.HORIZONTAL);
+	}
+
+
+	/**
+	 * Redefine the methode toString for print the gampe on the console : 
+	 * '*' = a empty cell
+	 * 'number' = a vehicle
+	 * the number matche with the position of the vehicle on the table Vehicle[]
+	 */
+	public String toString()
+	{ 
 		
-	}	
+		String resultat = "";
+		for(int y=0; y<BOARD_SIZE; y++)
+		{
+			for(int x=0; x<BOARD_SIZE; x++)
+			{
+				
+				boolean etat =  false;
+				Position pos = new Position(x,y);
+			/*	try
+				{
+					pos = new Position(x,y);
+				}
+				catch (positionOutOfBoardExeption e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				finally
+				{
+				if(pos == null)
+				{
+					pos.setX(x);
+					pos.setY(y);
+				}				
+				}*/
+				for(int i=0; i<this.vehicles.length; i++)
+				{
+					Position positionCurrs[] = this.vehicles[i].getPositions();
+					for(int j = 0; j<positionCurrs.length; j++)
+					{
+						if(positionCurrs[j].equals(pos))
+						{
+							resultat = resultat + " " + i + " ";
+							etat = true;
+						}
+					}
+				}
+				if(etat == false)
+				{
+					resultat = resultat + " " + "*" + " ";
+				}
+				if(x==5)
+				{
+					resultat = resultat + "\n";
+				}
+			}
+		}
+		System.out.println(resultat);
+		return resultat;
+	}
+	
+	
 }

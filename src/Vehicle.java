@@ -12,9 +12,12 @@ public class Vehicle
 	 */
 	private Color color;
 	
+	/**
+	 * @return the color of the vehicle
+	 */
 	public Color getColor()
 	{
-		return color;
+		return this.color;
 	}
 
 
@@ -23,24 +26,34 @@ public class Vehicle
 	 */
 	private Position[] positions;
 	
+	/**
+	 * vehicle's direction (VERTICAL or HORIZONTAL)
+	 */
 	private Direction direction;
 	
 
+	/**
+	 * @return the vehicle's direction
+	 */
 	public Direction getDirection() {
-		return direction;
+		return this.direction;
 	}
 
 
+	/**
+	 * @return the tab Positions of all position of the vehicle
+	 */
 	public Position[] getPositions()
 	{
-		return positions;
+		return this.positions;
 	}
 
 
 	/**
 	 * create a new vehicle with his color and his positions on the board
 	 * @param color Color of the vehicle
-	 * @param positions positions of the vehicle
+	 * @param positions Positions of the vehicle
+	 * @param direction Direction of the vehicle
 	 */
 	public Vehicle(Color color, Position[] positions, Direction direction)
 	{
